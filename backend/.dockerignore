@@ -1,0 +1,10 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+storage/renders/*
+storage/temp/*
+storage/jobs/*
+storage/uploads/*
+.env
+.git/

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+backend/storage/renders/*
+backend/storage/temp/*
+backend/storage/jobs/*
+backend/storage/uploads/*
+!backend/storage/renders/.gitkeep
+!backend/storage/temp/.gitkeep
+!backend/storage/jobs/.gitkeep
+!backend/storage/uploads/.gitkeep
+.DS_Store
+node_modules/
+*.log

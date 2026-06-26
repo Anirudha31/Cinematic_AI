@@ -1,0 +1,32 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Job storage / async
+aiofiles==24.1.0
+
+# AI script planning (optional, falls back to templates if no key)
+anthropic==0.40.0
+
+# Free stock footage / images
+requests==2.32.3
+Pillow==10.4.0
+
+# Text to speech (fully free, offline-capable)
+gTTS==2.5.4
+edge-tts==7.0.0
+
+# Captions via speech-to-text (free, runs locally)
+faster-whisper==1.1.1
+
+# Video assembly
+moviepy==2.1.2
+numpy==2.2.1
+
+# Background music free source helper
+python-slugify==8.0.4
+
+# CORS / env
+python-dotenv==1.0.1
