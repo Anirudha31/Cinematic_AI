@@ -1,3 +1,13 @@
+---
+title: Cinematic AI
+emoji: 🎬
+colorFrom: purple
+colorTo: blue
+sdk: docker
+app_port: 7860
+build_context: ./backend
+pinned: false
+---
 # ReelForge — AI Video Studio
 
 Type a prompt, get a fully edited, ready-to-post video: script, scenes,
