@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Convenience script: sets up and runs the ReelForge backend.
+# Convenience script: sets up and runs the Cinematic AI backend.
 # Usage: ./run_backend.sh
 set -e
 

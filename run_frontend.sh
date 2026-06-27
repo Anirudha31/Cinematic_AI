@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Convenience script: serves the ReelForge frontend on http://localhost:8080
+# Convenience script: serves the Cinematic AI frontend on http://localhost:8080
 set -e
 cd "$(dirname "$0")/frontend"
 echo "Serving frontend at http://localhost:8080"

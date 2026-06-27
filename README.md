@@ -1,14 +1,5 @@
----
-title: Cinematic AI
-emoji: 🎬
-colorFrom: purple
-colorTo: blue
-sdk: docker
-app_port: 7860
-build_context: ./backend
-pinned: false
----
-# ReelForge — AI Video Studio
+
+# Cinematic AI — AI Video Studio
 
 Type a prompt, get a fully edited, ready-to-post video: script, scenes,
 footage, AI voiceover, auto captions, background music, and a thumbnail —
@@ -38,7 +29,7 @@ Nothing here requires a credit card to try.
 ## Project structure
 
 ```
-reelforge/
+Cinematic AI/
   frontend/          HTML + CSS + vanilla JS, no build step
   backend/            Python (FastAPI) API + video pipeline
   docker-compose.yml  Runs both together
@@ -79,7 +70,7 @@ Visit http://localhost:8080.
   video encoding is CPU-bound.
 - **Frontend**: any static host (Netlify, Vercel, Cloudflare Pages,
   GitHub Pages, S3+CloudFront) - it's just static files. Set
-  `window.REELFORGE_API_BASE` to your backend's public URL (see
+  `window.Cinematic AI_API_BASE` to your backend's public URL (see
   `frontend/README.md`).
 
 ## Updating / extending

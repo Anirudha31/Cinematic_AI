@@ -1,4 +1,4 @@
-# ReelForge Backend
+# Cinematic AI Backend
 
 Python (FastAPI) backend that powers prompt-to-video generation: script
 planning, footage sourcing, AI voiceover, auto captions, background music,

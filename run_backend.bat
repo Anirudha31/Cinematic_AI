@@ -1,5 +1,5 @@
 @echo off
-REM Convenience script: sets up and runs the ReelForge backend on Windows.
+REM Convenience script: sets up and runs the Cinematic AI backend on Windows.
 REM Usage: run_backend.bat
 
 cd "%~dp0backend"

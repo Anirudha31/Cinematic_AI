@@ -1,4 +1,4 @@
-# ReelForge Frontend
+# Cinematic AI Frontend
 
 Plain HTML, CSS, and JavaScript — no build step, no framework, no
 npm install required. Open it directly or serve it with any static
@@ -37,7 +37,7 @@ To point at a different backend (e.g. a deployed server), add this
 before the script tags in `index.html`:
 
 ```html
-<script>window.REELFORGE_API_BASE = "https://your-backend.example.com";</script>
+<script>window.Cinematic AI_API_BASE = "https://your-backend.example.com";</script>
 <script src="js/api.js"></script>
 <script src="js/app.js"></script>
 ```

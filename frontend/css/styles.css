@@ -1,9 +1,3 @@
-/* ===========================================================
-   ReelForge — design tokens
-   Canvas: near-black studio. Accent: record-light orange.
-   Display type: Archivo Expanded (broadcast/industrial feel).
-   Body: Inter. Data/timecodes: JetBrains Mono.
-   =========================================================== */
 :root {
   --canvas: #0e0f12;
   --canvas-raised: #15171b;
