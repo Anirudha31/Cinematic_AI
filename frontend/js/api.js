@@ -1,15 +1,8 @@
 const API_BASE = (() => {
   if (window.REELFORGE_API_BASE) return window.REELFORGE_API_BASE;
-  
   const { protocol, hostname, port } = window.location;
-  
   if (port === "8000") return "";
-  
-  if (hostname === "localhost" || hostname === "127.0.0.1") {
-    return `${protocol}//${hostname}:8000`;
-  }
-
-  return `https://ai-video-creator-production-ab2e.up.railway.app`;
+  return `${protocol}//${hostname}:8000`;
 })();
 
 const Api = {
@@ -37,7 +30,7 @@ const Api = {
       const err = await res.json().catch(() => ({}));
       throw new Error(err.detail || "Failed to start generation");
     }
-    return res.json();
+    return res.json(); // { job_id }
   },
 
   async getJob(jobId) {

@@ -1,9 +1,3 @@
-/**
- * ReelForge frontend app logic.
- * Handles: platform chip selection, advanced options panel, job submission,
- * polling for progress, and rendering the final result.
- */
-
 const STATIC_PLATFORMS = {
   instagram_reel: { w: 1080, h: 1920, max_seconds: 90, label: "Instagram Reel" },
   youtube_short: { w: 1080, h: 1920, max_seconds: 60, label: "YouTube Shorts" },
