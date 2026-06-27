@@ -1,265 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cinematic AI - Prompt to video</title>
-<meta name="description" content="Describe your video. Cinematic AI writes the script, sources the footage, adds voiceover, captions, music and a thumbnail — then gives you a file to download.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinematic AI - Prompt to video</title>
+  <meta name="description"
+    content="Describe your video. Cinematic AI writes the script, sources the footage, adds voiceover, captions, music and a thumbnail — then gives you a file to download.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<div class="grain"></div>
+  <div class="grain"></div>
 
-<header class="topbar">
-  <div class="topbar__inner">
-    <a href="#" class="logo">
-      <span class="logo__mark" aria-hidden="true">
-        <span class="logo__dot"></span>
-      </span>
-      Cinematic AI
-    </a>
-    <nav class="topbar__nav">
-      <a href="#studio">Studio</a>
-      <a href="#how">How it works</a>
-      <a href="#platforms">Platforms</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero" id="studio">
-    <div class="hero__inner">
-      <p class="eyebrow"><span class="eyebrow__rec"></span> Prompt in. Edited video out.</p>
-      <h1 class="hero__title">
-        Type the idea.<br>
-        Cinematic AI cuts the<span class="hero__title-accent"> video.</span>
-      </h1>
-      <p class="hero__sub">
-        Script, footage, voiceover, captions, music and a thumbnail — generated
-        from one line of text, ready to post on YouTube, Instagram, TikTok or Facebook.
-      </p>
-
-      <form class="composer" id="composer">
-        <div class="composer__timeline" aria-hidden="true">
-          <div class="composer__playhead"></div>
-        </div>
-
-        <label for="prompt" class="sr-only">Describe your video</label>
-        <textarea
-          id="prompt"
-          class="composer__input"
-          placeholder="e.g. 3 morning habits that actually improve focus, fast cuts, energetic tone"
-          rows="2"
-          maxlength="2000"
-        ></textarea>
-
-        <div class="composer__row">
-          <div class="composer__chip-group" id="platformChips" role="group" aria-label="Platform">
-          </div>
-
-          <div class="composer__actions">
-            <button type="button" class="composer__options-toggle" id="optionsToggle" aria-expanded="false">
-              Options
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <button type="submit" class="composer__submit" id="submitBtn">
-              <span>Generate video</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Advanced options panel, collapsed by default -->
-        <div class="composer__options" id="optionsPanel" hidden>
-          <div class="opt">
-            <span class="opt__label">Tone</span>
-            <select id="optTone" class="opt__select">
-              <option value="energetic">Energetic</option>
-              <option value="calm">Calm</option>
-              <option value="professional">Professional</option>
-              <option value="funny">Funny</option>
-              <option value="dramatic">Dramatic</option>
-            </select>
-          </div>
-          <div class="opt">
-            <span class="opt__label">Duration</span>
-            <select id="optDuration" class="opt__select">
-              <option value="">Auto for platform</option>
-              <option value="15">15 seconds</option>
-              <option value="30">30 seconds</option>
-              <option value="60">60 seconds</option>
-              <option value="180">3 minutes</option>
-              <option value="600">10 minutes</option>
-            </select>
-          </div>
-          <label class="opt opt--toggle">
-            <input type="checkbox" id="optCaptions" checked>
-            <span>Auto captions</span>
-          </label>
-          <label class="opt opt--toggle">
-            <input type="checkbox" id="optVoiceover" checked>
-            <span>AI voiceover</span>
-          </label>
-          <label class="opt opt--toggle">
-            <input type="checkbox" id="optMusic" checked>
-            <span>Background music</span>
-          </label>
-          <label class="opt opt--toggle">
-            <input type="checkbox" id="optThumbnail" checked>
-            <span>Thumbnail</span>
-          </label>
-        </div>
-      </form>
-
-      <p class="hero__hint">No watermark ! </p>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="#" class="logo">
+        <span class="logo__mark" aria-hidden="true">
+          <span class="logo__dot"></span>
+        </span>
+        Cinematic AI
+      </a>
+      <nav class="topbar__nav">
+        <a href="#studio">Studio</a>
+        <a href="#how">How it works</a>
+        <a href="#platforms">Platforms</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="render-panel" id="renderPanel" hidden>
-    <div class="render-panel__inner">
+  <main>
 
-      <div class="render-status" id="renderStatus">
-        <div class="render-status__head">
-          <div class="render-status__stage" id="stageLabel">Queued</div>
-          <div class="render-status__pct"><span id="pctLabel">0</span>%</div>
-        </div>
-        <div class="scrubber">
-          <div class="scrubber__fill" id="scrubberFill"></div>
-          <div class="scrubber__playhead" id="scrubberPlayhead"></div>
-        </div>
-        <div class="render-status__stages" id="stageTrack">
-          <span data-stage="planning">Script</span>
-          <span data-stage="sourcing">Footage</span>
-          <span data-stage="voicing">Voice</span>
-          <span data-stage="captioning">Captions</span>
-          <span data-stage="scoring">Music</span>
-          <span data-stage="rendering">Render</span>
-          <span data-stage="thumbnail">Thumbnail</span>
-        </div>
-        <p class="render-status__message" id="statusMessage">Queued — starting up…</p>
+    <section class="hero" id="studio">
+      <div class="hero__inner">
+        <p class="eyebrow"><span class="eyebrow__rec"></span> Prompt in - Video out </p>
+        <h1 class="hero__title">
+          Type the idea.<br>
+          Cinematic AI cuts the<span class="hero__title-accent"> Video </span>
+        </h1>
+        <p class="hero__sub">
+          Script, footage, voiceover, captions, music and a thumbnail — generated
+          from one line of text, ready to post on YouTube, Instagram, TikTok or Facebook .
+        </p>
+
+        <form class="composer" id="composer">
+          <div class="composer__timeline" aria-hidden="true">
+            <div class="composer__playhead"></div>
+          </div>
+
+          <label for="prompt" class="sr-only">Describe your video</label>
+          <textarea id="prompt" class="composer__input" placeholder="Write your prompt here . . ." rows="2"
+            maxlength="2000"></textarea>
+
+          <div class="composer__row">
+            <div class="composer__chip-group" id="platformChips" role="group" aria-label="Platform">
+            </div>
+
+            <div class="composer__actions">
+              <button type="button" class="composer__options-toggle" id="optionsToggle" aria-expanded="false">
+                Options
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button type="submit" class="composer__submit" id="submitBtn">
+                <span>Generate video</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Advanced options panel, collapsed by default -->
+          <div class="composer__options" id="optionsPanel" hidden>
+            <div class="opt">
+              <span class="opt__label">Tone</span>
+              <select id="optTone" class="opt__select">
+                <option value="energetic">Energetic</option>
+                <option value="calm">Calm</option>
+                <option value="professional">Professional</option>
+                <option value="funny">Funny</option>
+                <option value="dramatic">Dramatic</option>
+              </select>
+            </div>
+            <div class="opt">
+              <span class="opt__label">Duration</span>
+              <select id="optDuration" class="opt__select">
+                <option value="">Auto for platform</option>
+                <option value="15">15 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="60">60 seconds</option>
+                <option value="180">3 minutes</option>
+                <option value="600">10 minutes</option>
+              </select>
+            </div>
+            <label class="opt opt--toggle">
+              <input type="checkbox" id="optCaptions" checked>
+              <span>Auto captions</span>
+            </label>
+            <label class="opt opt--toggle">
+              <input type="checkbox" id="optVoiceover" checked>
+              <span>AI voiceover</span>
+            </label>
+            <label class="opt opt--toggle">
+              <input type="checkbox" id="optMusic" checked>
+              <span>Background music</span>
+            </label>
+            <label class="opt opt--toggle">
+              <input type="checkbox" id="optThumbnail" checked>
+              <span>Thumbnail</span>
+            </label>
+          </div>
+        </form>
+
+        <p class="hero__hint"> No watermark ! No copyright ! <br>
+          Just download & use for Free
+        </p>
       </div>
+    </section>
 
-      <div class="result" id="resultBlock" hidden>
-        <div class="result__media">
-          <video id="resultVideo" class="result__video" controls playsinline></video>
+    <section class="render-panel" id="renderPanel" hidden>
+      <div class="render-panel__inner">
+
+        <div class="render-status" id="renderStatus">
+          <div class="render-status__head">
+            <div class="render-status__stage" id="stageLabel">Queued</div>
+            <div class="render-status__pct"><span id="pctLabel">0</span>%</div>
+          </div>
+          <div class="scrubber">
+            <div class="scrubber__fill" id="scrubberFill"></div>
+            <div class="scrubber__playhead" id="scrubberPlayhead"></div>
+          </div>
+          <div class="render-status__stages" id="stageTrack">
+            <span data-stage="planning">Script</span>
+            <span data-stage="sourcing">Footage</span>
+            <span data-stage="voicing">Voice</span>
+            <span data-stage="captioning">Captions</span>
+            <span data-stage="scoring">Music</span>
+            <span data-stage="rendering">Render</span>
+            <span data-stage="thumbnail">Thumbnail</span>
+          </div>
+          <p class="render-status__message" id="statusMessage">Queued — starting up…</p>
         </div>
-        <div class="result__meta">
-          <h3 id="resultTitle">Your video</h3>
-          <p class="result__caption" id="resultCaption"></p>
-          <div class="result__tags" id="resultTags"></div>
 
-          <div class="result__actions">
-            <a id="downloadVideoBtn" class="btn btn--primary" download>
-              Download video
-            </a>
-            <a id="downloadThumbBtn" class="btn btn--ghost" download>
-              Download thumbnail
-            </a>
-            <button type="button" class="btn btn--ghost" id="newVideoBtn">
-              Make another
-            </button>
+        <div class="result" id="resultBlock" hidden>
+          <div class="result__media">
+            <video id="resultVideo" class="result__video" controls playsinline></video>
+          </div>
+          <div class="result__meta">
+            <h3 id="resultTitle">Your video</h3>
+            <p class="result__caption" id="resultCaption"></p>
+            <div class="result__tags" id="resultTags"></div>
+
+            <div class="result__actions">
+              <a id="downloadVideoBtn" class="btn btn--primary" download>
+                Download video
+              </a>
+              <a id="downloadThumbBtn" class="btn btn--ghost" download>
+                Download thumbnail
+              </a>
+              <button type="button" class="btn btn--ghost" id="newVideoBtn">
+                Make another
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="error-block" id="errorBlock" hidden>
+          <p class="error-block__title">The render didn't finish.</p>
+          <p class="error-block__detail" id="errorDetail"></p>
+          <button type="button" class="btn btn--primary" id="retryBtn">Try again</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="how__inner">
+        <p class="section-eyebrow">The cut</p>
+        <h2 class="section-title">One prompt becomes seven decisions</h2>
+        <div class="how__grid">
+          <article class="how__step">
+            <span class="how__time">00:00</span>
+            <h3>Script &amp; scenes</h3>
+            <p>Your prompt is broken into a hook, a sequence of scenes, and a closing call-to-action — timed to fit your
+              chosen platform.</p>
+          </article>
+          <article class="how__step">
+            <span class="how__time">00:30</span>
+            <h3>Footage sourcing</h3>
+            <p>Each scene is matched to free stock footage or a generated visual, sized correctly for vertical, square
+              or widescreen.</p>
+          </article>
+          <article class="how__step">
+            <span class="how__time">01:00</span>
+            <h3>Voiceover</h3>
+            <p>A natural-sounding AI voice reads the script in a tone you pick — energetic, calm, professional, funny or
+              dramatic.</p>
+          </article>
+          <article class="how__step">
+            <span class="how__time">02:00</span>
+            <h3>Captions</h3>
+            <p>Speech-to-text generates word-accurate burned-in captions, styled to read at a glance on a phone screen.
+            </p>
+          </article>
+          <article class="how__step">
+            <span class="how__time">04:00</span>
+            <h3>Music</h3>
+            <p>A royalty-free track is chosen to match the mood of your script and mixed quietly under the voiceover.
+            </p>
+          </article>
+          <article class="how__step">
+            <span class="how__time">05:00</span>
+            <h3>Thumbnail &amp; download</h3>
+            <p>A thumbnail is pulled from the video's strongest frame and titled — then your finished file is ready to
+              download.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="platforms" id="platforms">
+      <div class="platforms__inner">
+        <p class="section-eyebrow">Built to spec</p>
+        <h2 class="section-title">Sized right for where it's going</h2>
+        <div class="platforms__grid" id="platformsGrid">
+          <div class="platform-card">
+            <span class="platform-card__ratio">9:16</span>
+            <h3>YouTube Shorts</h3>
+            <p>1080×1920 · up to 300s</p>
+          </div>
+          <div class="platform-card">
+            <span class="platform-card__ratio">9:16</span>
+            <h3>Instagram Reels</h3>
+            <p>1080×1920 · up to 90s</p>
+          </div>
+          <div class="platform-card">
+            <span class="platform-card__ratio">9:16</span>
+            <h3>TikTok</h3>
+            <p>1080×1920 · up to 3 min</p>
+          </div>
+          <div class="platform-card">
+            <span class="platform-card__ratio">16:9</span>
+            <h3>YouTube (long-form)</h3>
+            <p>1920×1080 · up to 20 min</p>
+          </div>
+          <div class="platform-card">
+            <span class="platform-card__ratio">16:9</span>
+            <h3>Facebook</h3>
+            <p>1280×720 · up to 4 min</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="error-block" id="errorBlock" hidden>
-        <p class="error-block__title">The render didn't finish.</p>
-        <p class="error-block__detail" id="errorDetail"></p>
-        <button type="button" class="btn btn--primary" id="retryBtn">Try again</button>
-      </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>&copy;2026 Cinematic AI . All Rights Reserved .</span>
+      <span class="footer__sep">·</span>
+      <span id="apiStatusFooter" class="footer__status">checking backend…</span>
     </div>
-  </section>
-
-  <section class="how" id="how">
-    <div class="how__inner">
-      <p class="section-eyebrow">The cut</p>
-      <h2 class="section-title">One prompt becomes seven decisions</h2>
-      <div class="how__grid">
-        <article class="how__step">
-          <span class="how__time">00:00</span>
-          <h3>Script &amp; scenes</h3>
-          <p>Your prompt is broken into a hook, a sequence of scenes, and a closing call-to-action — timed to fit your chosen platform.</p>
-        </article>
-        <article class="how__step">
-          <span class="how__time">00:08</span>
-          <h3>Footage sourcing</h3>
-          <p>Each scene is matched to free stock footage or a generated visual, sized correctly for vertical, square or widescreen.</p>
-        </article>
-        <article class="how__step">
-          <span class="how__time">00:16</span>
-          <h3>Voiceover</h3>
-          <p>A natural-sounding AI voice reads the script in a tone you pick — energetic, calm, professional, funny or dramatic.</p>
-        </article>
-        <article class="how__step">
-          <span class="how__time">00:22</span>
-          <h3>Captions</h3>
-          <p>Speech-to-text generates word-accurate burned-in captions, styled to read at a glance on a phone screen.</p>
-        </article>
-        <article class="how__step">
-          <span class="how__time">00:28</span>
-          <h3>Music</h3>
-          <p>A royalty-free track is chosen to match the mood of your script and mixed quietly under the voiceover.</p>
-        </article>
-        <article class="how__step">
-          <span class="how__time">00:34</span>
-          <h3>Thumbnail &amp; download</h3>
-          <p>A thumbnail is pulled from the video's strongest frame and titled — then your finished file is ready to download.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="platforms" id="platforms">
-    <div class="platforms__inner">
-      <p class="section-eyebrow">Built to spec</p>
-      <h2 class="section-title">Sized right for where it's going</h2>
-      <div class="platforms__grid" id="platformsGrid">
-        <div class="platform-card">
-          <span class="platform-card__ratio">9:16</span>
-          <h3>YouTube Shorts</h3>
-          <p>1080×1920 · up to 60s</p>
-        </div>
-        <div class="platform-card">
-          <span class="platform-card__ratio">9:16</span>
-          <h3>Instagram Reels</h3>
-          <p>1080×1920 · up to 90s</p>
-        </div>
-        <div class="platform-card">
-          <span class="platform-card__ratio">9:16</span>
-          <h3>TikTok</h3>
-          <p>1080×1920 · up to 3 min</p>
-        </div>
-        <div class="platform-card">
-          <span class="platform-card__ratio">16:9</span>
-          <h3>YouTube (long-form)</h3>
-          <p>1920×1080 · up to 20 min</p>
-        </div>
-        <div class="platform-card">
-          <span class="platform-card__ratio">16:9</span>
-          <h3>Facebook</h3>
-          <p>1280×720 · up to 4 min</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <span>&copy;2026  Cinematic AI . All Rights Reserved .</span>
-    <span class="footer__sep">·</span>
-    <span id="apiStatusFooter" class="footer__status">checking backend…</span>
-  </div>
-</footer>
-<script>window.REELFORGE_API_BASE = "https://anirudha31-cinematic-ai.hf.space";</script>
-<script src="js/api.js"></script>
-<script src="js/app.js"></script>
+  </footer>
+  <script>window.REELFORGE_API_BASE = "https://anirudha31-cinematic-ai.hf.space";</script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
