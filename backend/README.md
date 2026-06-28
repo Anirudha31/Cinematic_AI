@@ -107,3 +107,5 @@ folders and the app will start using them automatically.
   `app/services/visual_source.py::_try_text_to_video` for your chosen
   provider (Runway, Pika, Stability) — the hook is already wired into
   the pipeline, just needs the provider-specific request/response code.
+
+
